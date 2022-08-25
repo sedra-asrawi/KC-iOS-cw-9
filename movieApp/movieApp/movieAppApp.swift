@@ -1,14 +1,14 @@
 //
-//  movieAppApp.swift
-//  movieApp
+//  MovieAppApp.swift
+//  MovieApp
 //
-//  Created by Sedra Asrawi on 24/08/2022.
+//  Created by Sedra Asrawi on 25/08/2022.
 //
 
 import SwiftUI
 
 @main
-struct movieAppApp: App {
+struct MovieAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

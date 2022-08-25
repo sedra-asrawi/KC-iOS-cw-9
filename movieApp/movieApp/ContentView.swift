@@ -1,40 +1,36 @@
 //
 //  ContentView.swift
-//  movieApp
+//  MovieApp
 //
-//  Created by Sedra Asrawi on 24/08/2022.
+//  Created by Sedra Asrawi on 25/08/2022.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
-    
     var body: some View {
+       
         
-        NavigationView{
-                
+        NavigationView {
             List {
+                ForEach(MovieCollection){
+                    movie in
+                    
                     NavigationLink {
-                        
-                        MovieInfo(ourMovie: MovieModel(MovieName: <#T##String#>, MovieAct: <#T##[String]#>))
-                        
+                        DetailsView(MovieDetails: movie)
                     } label: {
-                        
-                            ForEach (MyMovies) {
-                                movie in
-                                MyView(movie: movie.MovieName)
-                            }
-                        }
+                        MovieView(movie: movie.MovieName)
+                    }
 
+                    
                 }
-                
-            
+            }
             .navigationTitle("Movies")
             
         }
-
-
+        
+        
+        
     }
 }
 
@@ -44,21 +40,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct MyView: View {
-    @State var Movie : String
-    var body: some View {
-        HStack{
-            Image(Movie)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 120, height: 120)
-            
-            Text(Movie)
-                .font(.system(size: 25))
-                .fontWeight(.thin)
-            
-            
-        }
-    }
-}
+
